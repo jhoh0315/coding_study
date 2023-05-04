@@ -1,10 +1,10 @@
-//코드번호 1901
+//코드번호 1902
 
 #include <stdio.h>
 
 int rere(int n){
-  if(n>1) rere(n-1);
   printf("%d\n",n);
+  if(n>1) rere(n-1);
 }
 
 int main(){
