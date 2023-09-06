@@ -1,0 +1,60 @@
+1.segfault 계정으로 접속해서, 현재 디렉토리에 있는 hello.txt를 읽어보세요! 계정 정보 : (segfault / segfault1234) 
+ssh segfault@ip주소
+cat hello.txt
+ans:segfault{Hello!}
+
+
+
+
+2.UID가 1001인 사용자 계정은 뭘까요?!
+cat /etc/passwd | grep 1001
+-jin:x:1001:1001::/home/jin:/bin/bash
+ans:jin
+
+
+
+
+3.jin 홈디렉토리에 이동해보세요!
+cd /home/jin
+
+
+
+
+4.mySecret 이라는 파일을 찾아서 읽어보세요!
+ls -l
+->msSecret은 주인만 읽을 수 있고 주인은 jin이다.
+cat myCredential.txt
+   jin:jinjiny  ->  jin의 비번은 jinjiny다
+su jin
+Password:jinjiny
+cat mySecret
+ans:segfault{iLikeHacking!}
+
+
+
+
+5.x_credentials.txt 라는 파일에서 normaltic의 비밀번호를 찾아내세요!
+find -name x_credentials.txt
+   ./dumps/x_credentials.txt
+cat ./dumps/x_credentials.txt | grep normaltic
+ans:segfault{WeakPass}
+
+
+
+
+6.이 시스템에서 열려있는 포트번호는?!
+netstat -ant
+ans:22,80,3306
+
+
+
+
+7.web 사이트에 들어가보자! 
+웹사이트로 들어가보기
+
+
+
+
+8.web 서버 페이지 로그인 페이지를 뚫어보자! (login.php 파일이 이 시스템 어디엔가 있다!)
+cat /var/www/html/login.php
+ans:segfault{YourackPassword!}

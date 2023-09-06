@@ -1,0 +1,339 @@
+0 -> 1
+cat readme
+   NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+
+
+
+
+1 -> 2
+cat ./-
+   rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+
+
+
+
+2 -> 3
+cat spaces\ in\ this\ filename
+   aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+
+
+
+
+3 -> 4
+ls -l
+cat .hidden
+   2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+
+
+
+
+4 -> 5
+file ./*
+cat ./-file07
+   lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+
+
+
+
+5 -> 6
+find ./* -type f -size 1033c
+cat ./maybehere07/.file2
+   P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+
+
+
+
+6 -> 7
+find ./* -size 33c -user bandit7 -group bandit6  2> /dev/null
+cat /var/lib/dpkg/info/bandit7.password
+   z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+
+
+
+
+7 -> 8
+grep millionth data.txt
+   TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+
+
+
+
+8 -> 9
+cat data.txt | sort | uniq -u   ->   data.txt 파일을 정렬후 단일로 있는 부분만 출력
+   EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+
+
+
+
+9 -> 10
+strings data.txt | grep ===   ->   data.txt파일 중 읽을 수 있는 부분중 ===이 포함된 부분만 출력
+   4========== the#
+   ========== password
+   ========== is
+   ========== G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+
+
+
+
+10 -> 11
+base64 data.txt --decode
+   The password is 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+
+
+
+
+11 -> 12
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+   The password is JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+
+
+
+
+12 -> 13
+cp /home/bandit12/data.txt data.txt
+xxd -r data.txt > data   ->   hexdump(16진법)인 파일을 바이너리(2진법)데이퍼로 변환
+
+file data
+   data: gzip compressed data, was "data2.bin"   ->   gz파일로 압축된 파일이다.
+mv data data.gz
+gzip -d data.gz
+
+file data
+   data: bzip2 compressed data, block size = 900k   ->   bz파일로 압축된 파일이다.
+mv data data.bz
+bzip2 -d data.bz
+
+file data
+   data: gzip compressed data   ->   gz파일로 압축된 파일이다.
+mv data data.gz
+gzip -d data.gz
+
+file data
+   data: POSIX tar archive (GNU)   ->   tar파일로 압축된 파일이다.
+mv data data.tar
+tar -xf data.tar
+
+file data5.bin
+   data5.bin: POSIX tar archive (GNU)   ->   tar파일로 압축된 파일이다.
+mv data5.bin data5.bin.tar
+tar -xf data5.bin.tar
+
+file data6.bin
+   data6.bin: bzip2 compressed data, block size = 900k   ->   bz파일로 압축된 파일이다.
+mv data6.bin data6.bin.bz
+bzip2 -d data6.bin.bz
+
+file data6.bin
+   data6.bin: POSIX tar archive (GNU)   ->   tar파일로 압축된 파일이다.
+mv data6.bin data6.bin.tar
+tar -xf data6.bin.tar
+
+file data8.bin
+   data8.bin: gzip compressed data,   ->   gz파일로 압축된 파일이다.
+mv data8.bin data8.bin.gz
+gzip -d data8.bin.gz
+
+file data8.bin
+   data8.bin: ASCII text
+cat data8.bin
+   The password is wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+
+
+
+
+13 -> 14
+ls -l /etc/bandit_pass/bandit14
+   -r-------- 1 bandit14 bandit14 33 Apr 23 18:04 /etc/bandit_pass/bandit14   ->   bandti14계정으로만 읽을 수 있다.
+ls
+   sshkey.private
+ssh -i sshkey.private bandit14@localhost -p 2220
+cat /etc/bandit_pass/bandit14
+   fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+
+
+
+
+14 -> 15
+telnet localhost 30000
+   Trying 127.0.0.1...
+   Connected to localhost.
+   Escape character is '^]'.
+fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+   Correct!
+   jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+
+
+
+
+15 -> 16
+openssl s_client localhost:30001
+jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+   Correct!
+   JQttfApK4SeyHwDlI9SXGR50qclOAil1
+
+
+
+
+16 -> 17
+netstat -ant
+   tcp6  0  0 :::31790  :::*  LISTEN   ->   31790포트 열려있음
+openssl s_client localhost:31790
+JQttfApK4SeyHwDlI9SXGR50qclOAil1
+   -----BEGIN RSA PRIVATE KEY-----
+   MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+   imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+   Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+   DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+   JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+   x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+   KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+   J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+   d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+   YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+   vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
+   +TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+   8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+   SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+   HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+   SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+   R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+   Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+   R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+   L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+   blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+   YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+   77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+   dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+   vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
+   -----END RSA PRIVATE KEY-----     ->   RSA키
+위의 키를 /tmp 폴더에 폴더를 만들고 sshkey.private파일에 저장한다.
+ssh -i sshkey.private bandit17@localhost -p 2220
+cat /etc/bandit_pass/bandit17
+   VwOSWtCA7lRKkTfbr2IDh6awj9RNZM5e
+
+
+
+
+17 -> 18
+diff passwords.new passwords.old   ->   두 파일 사이의 다른 곳 찾기
+   42c42
+   < hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+   ---
+   > glZreTEH1V3cGKL6g4conYqZqaEj0mte
+ans:hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+
+
+
+
+18 -> 19
+ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme 
+hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+   bandit18@bandit.labs.overthewire.org's password: 
+   awhqfNnAbc1naukrpqDYcF95h7HoMTrC
+
+
+
+
+19 -> 20
+./bandit20-do cat /etc/bandit_pass/bandit20   ->   bandit20-do라는 파일을 실행해서 bandit20계정으로 파일 읽기
+   VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+
+
+
+
+20 -> 21
+echo VxCazJaVykI6W36BkBU0mJTCM8rR95XT | nc -l -p 12346 &   ->   12346번 포트로 비번을 전달,netcat으로 listen함,&을 써서 백그라운드로 돌림
+   [2] 176861
+bandit20@bandit:~$ ./suconnect 12346
+   Read: VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+   Password matches, sending next password
+   NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+
++추가적으로 &말고 실행중 ctrl+z로 백그라운드로 돌릴 수 있음 또한 fg명령어로 백그라운드를 포그라운드로 가능
+
+
+
+
+21 -> 22
+cd /etc/cron.d
+cat cronjob_bandit22
+   @reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null   ->   bandit22계정으로 들어올때 /usr/bin/cronjob_bandit22.sh의 출력과 에러를 삭제한다.
+   * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+cat /usr/bin/cronjob_bandit22.sh
+   #!/bin/bash
+   chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+   cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv   ->   bandit22의 비번을 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv에 저장한다.
+cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+   WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
+
+
+
+
+22 -> 23
+cd /etc/cron.d
+cat cronjob_bandit23
+   @reboot bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+   * * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+
+cat /usr/bin/cronjob_bandit23.sh
+   #!/bin/bash
+
+   myname=$(whoami)
+   mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+   echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+   cat /etc/bandit_pass/$myname > /tmp/$mytarget
+
+echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+   8ca319486bfbbc3663ea0fbe81326349
+cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+   QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G
+
+
+
+
+23 -> 24
+cat cronjob_bandit24
+   @reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+   * * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+cat /usr/bin/cronjob_bandit24.sh
+   #!/bin/bash   ->   bash쉘을 사용한다.
+
+   myname=$(whoami)
+
+   cd /var/spool/$myname/foo || exit 1   ->   /var/spool/$myname/foo로 이동
+   echo "Executing and deleting all scripts in /var/spool/$myname/foo:"
+   for i in * .*;   ->   모든 파일에 대해 실행
+   do
+       if [ "$i" != "." -a "$i" != ".." ];   ->   현제디렉토리와 이전 디렉토리가 아닐 떄
+       then
+           echo "Handling $i"
+           owner="$(stat --format "%U" ./$i)"   
+           if [ "${owner}" = "bandit23" ]; then   ->   주인이 bandit23일떄
+               timeout -s 9 60 ./$i   ->   파일을 실행하고 60초 안에 안될 때 강제 종료
+           fi
+           rm -rf ./$i   ->   그 파일 강제 삭제
+       fi
+   done
+
+tmp디렉토리에 폴더를 만들어서 다음과 같은 passwd.sh 작성
+   #!/bin/bash
+   cat etc/bandit_pass/bandit24 > 폴더위치/passwd.txt
+
+chmod로 폴더에 쓰기권한 주기(권한이 없으면 passwd.txt가 만들어 지지 않음)
+chmod로 passwd.sh에 실행권한 주기
+
+cp 폴더위치/passwd.sh /var/spool/bandit24
+잠시 기다린 후 ls로 확인하면 passwd.txt가 있다
+cat passwd.txt
+   VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar
+
+
+
+
+24 -> 25
+
+
+
+
