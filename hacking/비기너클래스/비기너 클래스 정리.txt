@@ -513,6 +513,90 @@ https://tryhackme.com/room/ice
 
 
 
+Drill Course [1]
+
+dirbuster
+파일 위치 : /user/share/wordlist
+ㄴ> /secret/evil.php
+
+WEB FUZZING
+
+ffuf -u [URL] -w (wordlist)
+
+wordlist : /usr/share/wordlists/rockyou.txt.gz
+
+gunzip -d /usr/share/wordlists/rockyou.txt.gz
+
+?FUZZ=/etc/passwd
+
+-fs 0 : 파일사이즈가 0이면 스킵을 하겠다. 
+
+/home/name/.ssh/id_rsa
+키의 권한은 600이어야한다.
+
+john [FILE] --wordlist=/usr/share/wordlist/rockyou.txt
+ssh2john [FILE] > hash
+
+
+python3 -m http.server 80
+
+
+mkpasswd --method=SHA-512 --stdin
+
+
+
+
+
+
+Drill Course [1]
+NFS : Network File System  (well known port:111)
+NFS 실행중 -> TCP : 111번 포트가 열려있다
+
+showmount -e [IP Address]
+-> NFS중인 파일들을 보여준다.
+
+mount [IP Address]:[경로] [실제내컴퓨터경로]
+ex) mkdir /tmp/nfs
+    mount 192.168.50.170:/home/itsme /tmp/nfs
+
+
+과제
+
+1. 오늘 문제 풀이. 정리
+2. Target 2번 풀기
+
+
+
+
+Drill 2_2
+
+- SSH Key
+- NFS service
+
+
+
+boot2root
+xss -> X
+피싱공격
+
+
+wordpress안에 있는 취약점을 찾아줌
+wpscan --url [URL]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
